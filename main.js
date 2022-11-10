@@ -1,6 +1,17 @@
-// EXEMPLO 6
-function tocaSom(idElementoAudio) {
-  document.querySelector(idElementoAudio).play();
+// EXEMPLO 7
+//Função que reproduz o som dos instrumentos musicais que estão armazenados 
+//dentro de um elemento áudio
+function tocaSom(seletorAudio) {
+
+  const elemento = document.querySelector(seletorAudio);
+
+  if (elemento != null && elemento.localName === 'audio'){
+      elemento.play();
+  }
+  else {
+    alert('Elemento não encontrado ou seletor inválido');  
+  }
+
 }
 
 const listaDeTeclas = document.querySelectorAll(".tecla");
@@ -35,6 +46,43 @@ for (let contador = 0; contador < listaDeTeclas.length; contador++) {
   }
 
 }
+// // EXEMPLO 6
+// function tocaSom(idElementoAudio) {
+//   document.querySelector(idElementoAudio).play();
+// }
+
+// const listaDeTeclas = document.querySelectorAll(".tecla");
+
+// //para
+// for (let contador = 0; contador < listaDeTeclas.length; contador++) {
+
+//   const tecla = listaDeTeclas[contador];
+
+//   const instrumento = tecla.classList[1];
+
+//   const idAudio = `#som_${instrumento}`; //template string
+
+//   tecla.onclick = function () {
+
+//     tocaSom(idAudio);
+
+//   };
+
+//   tecla.onkeydown = function (event) {
+
+//     // console.log(event.code == 'Space')
+
+//     if (event.code === 'Space' || event.code === 'Enter') {
+//       tecla.classList.add('ativa');
+//     }
+  
+//   }
+  
+//   tecla.onkeyup = function (){
+//     tecla.classList.remove('ativa');
+//   }
+
+// }
 
 // EXEMPLO 1
 //  function tocaSomPom () {
